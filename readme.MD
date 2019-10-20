@@ -10,7 +10,17 @@ cd opal-server
 bundle install && yarn install # install deps
 ```
 
-Usage
+Update index.html
+```js
+var socket = io.connect('https://opal-realtime-socket-express.herokuapp.com', {transports:['websocket']});
+// with
+var socket = io.connect('http://localhost:8000', {transports:['websocket']});
+```
+
+
+### Usage
+
+Replace
 
 `rake` it's the default rake task that starts the server
 
