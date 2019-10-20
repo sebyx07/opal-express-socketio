@@ -1,6 +1,8 @@
 require './lib/load.rb'
 
-Server.new(8000) do |s, io|
+port = `process.env.PORT` || 8000
+
+Server.new(port) do |s, io|
   s.use(Logger)
   s.start!
 
