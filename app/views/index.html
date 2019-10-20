@@ -24,7 +24,7 @@
 <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
   $(function () {
-    var socket = io.connect('http://localhost:8000', {transports:['websocket']});
+    var socket = io.connect('https://opal-realtime-socket-express.herokuapp.com', {transports:['websocket']});
     $('form').submit(function(){
       socket.emit('chat message', $('#m').val());
       $('#m').val('');
