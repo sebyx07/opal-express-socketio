@@ -1,0 +1,22 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ast (2.4.0)
+    c_lexer (2.5.3.0.0)
+      ast (~> 2.4.0)
+      parser (= 2.5.3.0)
+    opal (1.0.0)
+      ast (>= 2.3.0)
+      parser (= 2.5.3.0)
+    parser (2.5.3.0)
+      ast (~> 2.4.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  c_lexer
+  opal
+
+BUNDLED WITH
+   2.0.2
