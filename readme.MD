@@ -3,9 +3,16 @@
 
 ### Run
 
-`$ bundle install && yarn install` # install deps
+Installation
+```bash
+git clone https://github.com/sebyx07/opal-express-socketio.git opal-server
+cd opal-server
+bundle install && yarn install # install deps
+```
 
-`$ rake` it's the default rake task 
+Usage
+
+`rake` it's the default rake task that starts the server
 
 go to http://localhost:8000
 
