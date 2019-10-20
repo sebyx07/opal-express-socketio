@@ -44,25 +44,27 @@ end
 
 ```ruby
 Server.new(8000) do |s, io|
-  s.use(Logger)
-  s.start!
+  # express part
+  s.use(Logger) # use middlewares
+  s.start! # start the server
 
-  s.get("/") do |_, res|
-    res.sendFile(s.view("index.html"))
+  s.get("/") do |_, res| # handle get to root request
+    res.sendFile(s.view("index.html")) # send the index html file
   end
 
-  s.get("/:name") do |req, res|
+  s.get("/:name") do |req, res| # handle dynamic requests
     res.send(req.params.name)
   end
 
-  io.on 'connection' do |socket|
+  # socket io part
+  io.on 'connection' do |socket| # initialize socket io connection
     socket = Native(socket) # if you have problems with apply for a object, just Native() it
 
-    socket.on('chat message') do |msg|
-      io.emit('chat message', msg)
+    socket.on('chat message') do |msg| # listen for messages
+      io.emit('chat message', msg) # send it back, to all clients
     end
 
-    socket.on('disconnect') do
+    socket.on('disconnect') do # handle disconnect
       p "disconnect"
     end
   end
